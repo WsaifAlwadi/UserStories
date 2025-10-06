@@ -10,12 +10,11 @@ public class T02_CommonElements {
     public T02_CommonElements() {
         PageFactory.initElements(DriverManager.getDriver(), this);
     }
+    @FindBy(tagName = "body")
+    public WebElement pageBody;
 
     @FindBy(tagName = "h1")
     public WebElement pageHeader;
-
-    @FindBy(className = "alert-success")
-    public WebElement successAlert;
 
     @FindBy(className = "alert-danger")
     public WebElement errorAlert;
@@ -23,13 +22,13 @@ public class T02_CommonElements {
     @FindBy(className = "alert-warning")
     public WebElement warningAlert;
 
+    @FindBy(className = "alert-success")
+    public WebElement successAlert;
+
     @FindBy(className = "container")
     public WebElement mainContainer;
 
-    @FindBy(tagName = "body")
-    public WebElement pageBody;
 
-    // Common methods
     public String getPageTitle() {
         return DriverManager.getDriver().getTitle();
     }
